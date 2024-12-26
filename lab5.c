@@ -1,13 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// Define the structure of a node
+
 struct Node {
     int data;
     struct Node* next;
 };
 
-// Function to create a new node
 struct Node* createNode(int data) {
     struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
     newNode->data = data;
@@ -15,14 +14,12 @@ struct Node* createNode(int data) {
     return newNode;
 }
 
-// Function to insert a node at the beginning of the linked list
 void insertAtBeginning(struct Node** head, int data) {
     struct Node* newNode = createNode(data);
     newNode->next = *head;
     *head = newNode;
 }
 
-// Function to insert a node at the end of the linked list
 void insertAtEnd(struct Node** head, int data) {
     struct Node* newNode = createNode(data);
     if (*head == NULL) {
@@ -36,7 +33,6 @@ void insertAtEnd(struct Node** head, int data) {
     temp->next = newNode;
 }
 
-// Function to display the contents of the linked list
 void displayList(struct Node* head) {
     if (head == NULL) {
         printf("The list is empty.\n");
